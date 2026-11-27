@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reactorsim"
+version = "1.0.0"
+description = "Stochastic lattice simulation of nuclear reactor transients and severe accidents: coupled neutronics, xenon/iodine/samarium poisoning, thermal hydraulics, oxidation and a continuous-time Markov model of core damage for PWR, BWR, RBMK, CANDU, HTGR and SFR designs, with an interactive PyQt5 application."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.22", "scipy>=1.8", "matplotlib>=3.5", "PyQt5>=5.15", "pyqtgraph>=0.13"]
+
+[project.scripts]
+reactorsim = "reactorsim.cli:main"
+
+[project.gui-scripts]
+reactorsim-gui = "reactorsim.gui.app:main"
+
+[tool.setuptools.packages.find]
+include = ["reactorsim*"]
